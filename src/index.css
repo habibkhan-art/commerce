@@ -1,0 +1,68 @@
+@import "tailwindcss";
+html{
+  scroll-behavior: smooth;
+}
+/* Import Tailwind base */
+
+/* Import custom animations */
+
+
+/* Global Styles */
+body {
+  @apply bg-gray-900 text-white font-sans;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1f2937; /* gray-800 */
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6; /* blue-500 */
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb; /* blue-600 */
+}
+
+/* Headings & Paragraphs */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+p {
+  @apply text-gray-300;
+}
+
+/* Links */
+a {
+  @apply text-white no-underline;
+}
+a:hover {
+  @apply underline text-blue-400 transition-all duration-300;
+}
+
+/* Buttons Default */
+button {
+  @apply cursor-pointer font-semibold transition-all duration-300;
+}
+
+/* Utility for container padding */
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* Animations on page load */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+}
