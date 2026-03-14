@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,15 +15,28 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Future: Add email API or Firebase submission
-    alert("Message sent! Thank you for contacting us.");
+    // Show toast notification
+    toast.success("Message sent! Thank you for contacting us.", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
+    // Clear the form
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
     <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center p-6 pt-32">
       <div className="max-w-2xl w-full bg-gray-900 p-8 rounded-2xl shadow-lg">
-        <h1 className="text-4xl font-bold mb-6 text-center text-blue-400">Contact Us</h1>
+        <h1 className="text-4xl font-bold mb-6 text-center text-blue-400">
+          Contact Us
+        </h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
@@ -62,6 +77,9 @@ const Contact = () => {
           </button>
         </form>
       </div>
+
+      {/* Toast container */}
+      <ToastContainer />
     </div>
   );
 };

@@ -12,7 +12,7 @@ const Home = () => {
         {/* Left Side Content */}
         <div>
           <h1 className="text-5xl font-bold leading-tight mb-6">
-            Welcome to <span className="text-blue-500">E-Shop</span>
+            Welcome to <span className="text-blue-500 animate-pulse">E-Shop</span>
           </h1>
 
           <p className="text-gray-300 mb-6 text-lg">
